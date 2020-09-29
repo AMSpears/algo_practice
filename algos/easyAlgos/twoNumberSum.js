@@ -20,6 +20,11 @@ SAMPLE OUTPUT:
 */
 
 // SOLUTION:
+export const twoNumberSum = () => {
+  console.log('here')
+}
+
+
 
 
 
