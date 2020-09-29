@@ -20,8 +20,23 @@ SAMPLE OUTPUT:
 */
 
 // SOLUTION:
-export const twoNumberSum = () => {
-  console.log('here')
+export const twoNumberSum = (array, targetSum) => {
+  let leftIdx = 0
+  let rightIdx = array.length - 1
+
+  while(leftIdx !== rightIdx) {
+    const currSum = array[leftIdx] + array[rightIdx]
+
+    if (currSum === targetSum) {
+      return [array[leftIdx], array[rightIdx]]
+    } else if (currSum < targetSum) {
+      leftIdx++
+    } else {
+      rightIdx--
+    }
+  }
+
+  return []
 }
 
 

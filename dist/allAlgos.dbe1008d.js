@@ -146,8 +146,23 @@ SAMPLE OUTPUT:
 // PROBLEM FROM ALGOEXPERT.IO
 */
 // SOLUTION:
-const twoNumberSum = () => {
-  console.log('here');
+const twoNumberSum = (array, targetSum) => {
+  let leftIdx = 0;
+  let rightIdx = array.length - 1;
+
+  while (leftIdx !== rightIdx) {
+    const currSum = array[leftIdx] + array[rightIdx];
+
+    if (currSum === targetSum) {
+      return [array[leftIdx], array[rightIdx]];
+    } else if (currSum < targetSum) {
+      leftIdx++;
+    } else {
+      rightIdx--;
+    }
+  }
+
+  return [];
 };
 
 exports.twoNumberSum = twoNumberSum;
@@ -156,7 +171,7 @@ exports.twoNumberSum = twoNumberSum;
 
 var _twoNumberSum = require("./easyAlgos/twoNumberSum.js");
 
-(0, _twoNumberSum.twoNumberSum)();
+console.log((0, _twoNumberSum.twoNumberSum)([3, 5, -4, 8, 11, 1, -1, 6], 10));
 },{"./easyAlgos/twoNumberSum.js":"algos/easyAlgos/twoNumberSum.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -185,7 +200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50068" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52276" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
