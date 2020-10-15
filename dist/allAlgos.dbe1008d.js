@@ -267,10 +267,6 @@ var _twoNumberSum = require("./easyAlgos/twoNumberSum.js");
 var _ValidSubsequence = require("./easyAlgos/ValidSubsequence");
 
 var _findClosestValueInBst = require("./easyAlgos/findClosestValueInBst");
-
-// console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10))
-// console.log(validSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
-console.log((0, _findClosestValueInBst.findClosestValueInBst)(bst, 12));
 },{"./easyAlgos/twoNumberSum.js":"algos/easyAlgos/twoNumberSum.js","./easyAlgos/ValidSubsequence":"algos/easyAlgos/ValidSubsequence.js","./easyAlgos/findClosestValueInBst":"algos/easyAlgos/findClosestValueInBst.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
