@@ -258,7 +258,7 @@ class BST {
     this.right = null;
   }
 
-} // TODO: CREATRE TESTING BST
+} // TODO: CREATE TESTING BST
 },{}],"algos/allAlgos.js":[function(require,module,exports) {
 "use strict";
 
