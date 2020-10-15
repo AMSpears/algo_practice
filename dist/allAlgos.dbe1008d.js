@@ -205,6 +205,60 @@ const validSubsequence = (array, sequence) => {
 };
 
 exports.validSubsequence = validSubsequence;
+},{}],"algos/easyAlgos/findClosestValueInBst.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.findClosestValueInBst = void 0;
+
+// FIND CLOSEST VALUE IN BST
+
+/** Write a function that takes in a Binary Search Tree (BST) and a Target Intenger value and returns the closes value to that target value contained in the BST.
+ *
+ * You can assume that there will only be one closest value.
+ *
+ * Each BST node has an integer value, a left child node and a right child node. A node is said to be a valid BST node if and only if it satisfies the BST property: its value is strictly greater than the values of every node to its left; its value is less than or equal to the values of every node to its
+ right; and its children nodes are either valid BST nodes themsevels or None/null.
+ *
+ * tree =  10
+ *     5        15
+ *   2   5    13  22
+ * 1         14
+ * Target = 12
+ */
+// SOLUTION:
+const findClosestValueInBst = (tree, target) => {
+  return findClosestValueInBstHelper(tree, target, parseFloat(Infinity));
+};
+
+exports.findClosestValueInBst = findClosestValueInBst;
+
+const findClosestValueInBstHelper = (tree, target, closest) => {
+  if (tree === null) return closest;
+
+  if (Math.abs(target - closest) > Math.abs(target - tree.value)) {
+    closest = tree.value;
+  }
+
+  if (target < tree.value) {
+    return findClosestValueInBstHelper(tree.left, target, closest);
+  } else if (target > tree.value) {
+    return findClosestValueInBstHelper(tree.right, target, closest);
+  } else {
+    return closest;
+  }
+};
+
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
+
+} // TODO: CREATRE TESTING BST
 },{}],"algos/allAlgos.js":[function(require,module,exports) {
 "use strict";
 
@@ -212,9 +266,12 @@ var _twoNumberSum = require("./easyAlgos/twoNumberSum.js");
 
 var _ValidSubsequence = require("./easyAlgos/ValidSubsequence");
 
+var _findClosestValueInBst = require("./easyAlgos/findClosestValueInBst");
+
 // console.log(twoNumberSum([3, 5, -4, 8, 11, 1, -1, 6], 10))
-console.log((0, _ValidSubsequence.validSubsequence)([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]));
-},{"./easyAlgos/twoNumberSum.js":"algos/easyAlgos/twoNumberSum.js","./easyAlgos/ValidSubsequence":"algos/easyAlgos/ValidSubsequence.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+// console.log(validSubsequence([5, 1, 22, 25, 6, -1, 8, 10], [1, 6, -1, 10]))
+console.log((0, _findClosestValueInBst.findClosestValueInBst)(bst, 12));
+},{"./easyAlgos/twoNumberSum.js":"algos/easyAlgos/twoNumberSum.js","./easyAlgos/ValidSubsequence":"algos/easyAlgos/ValidSubsequence.js","./easyAlgos/findClosestValueInBst":"algos/easyAlgos/findClosestValueInBst.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -242,7 +299,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52276" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61990" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
